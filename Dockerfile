@@ -1,6 +1,4 @@
 ARG DEBIAN_FRONTEND=noninteractive 
-RUN apt-get install -y --no-install-recommends tzdata
-RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 # Source: https://suragch.medium.com/programming-on-your-phone-a2547f0e293
 FROM ubuntu:20.04
@@ -13,6 +11,9 @@ LABEL description="This is a dockerfile for a web based flutter solution \
 and also enclosed a VSC IDE for coding."
 
 USER root
+
+RUN apt-get install -y --no-install-recommends tzdata
+RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 RUN apt-get -yq update
 WORKDIR /root
