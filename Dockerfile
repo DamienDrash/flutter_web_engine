@@ -37,9 +37,9 @@ RUN apt-get install -yq git && \
 
 # Create new flutter project
 WORKDIR /root/projects
-RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
+RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/social_analytix.git
 VOLUME /projects
-WORKDIR /root/projects/Social_Analytix
+WORKDIR /root/projects/social_analytix
 
 # Adding web support to the app
 RUN flutter channel beta
@@ -65,17 +65,17 @@ RUN ufw allow 'Nginx HTTP'
 # Create a new site config file
 RUN echo "server {\
               listen 80;\
-                          root /home/Social_Analytix/build/web;\
+                          root /home/social_analytix/build/web;\
                           index index.html index.htm;\
                           location / {\
                               try_files $uri $uri/ =404;\
                           }\
-                  }" > /etc/nginx/sites-available/Social_Analytix
+                  }" > /etc/nginx/sites-available/social_analytix
 # Remove the Nginx default page
 RUN rm /etc/nginx/sites-enabled/default
 
 # Adding own app page
-RUN ln -s /etc/nginx/sites-available/Social_Analytix /etc/nginx/sites-enabled
+RUN ln -s /etc/nginx/sites-available/social_analytix /etc/nginx/sites-enabled
 
 # Restart Nginx
 RUN systemctl restart nginx
