@@ -33,13 +33,13 @@ RUN apt-get install -yq git && \
     apt-get install -yq unzip
 
 # Create new flutter project
-RUN ["echo", "ls", '-l]
+RUN ["echo", "ls", "-l"]
 RUN cd /projects
-RUN ["echo", "ls", '-l]
+RUN ["echo", "ls", "-l"]
 RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
 VOLUME /projects
 RUN cd /Social_Analytix
-RUN ["echo", "ls", '-l]
+RUN ["echo", "ls", "-l"]
 
 # Adding web support to the app
 RUN flutter channel beta
@@ -47,7 +47,7 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 
 # Adding web support to the root dir
-RUN ["echo", "ls", '-l]
+RUN ["echo", "ls", "-l"]
 RUN flutter create .
 
 # Building web project
