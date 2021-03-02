@@ -33,11 +33,10 @@ RUN apt-get install -yq git && \
     apt-get install -yq unzip
 
 # Create new flutter project
-RUN cd projects
-### /*RUN flutter create ${PROJECT_NAME}*/ ###
+RUN cd /projects
 RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
 VOLUME /projects
-RUN cd /projects && cd Social_Analytix
+RUN cd /Social_Analytix
 
 # Adding web support to the app
 RUN flutter channel beta
