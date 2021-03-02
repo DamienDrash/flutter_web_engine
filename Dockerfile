@@ -26,7 +26,9 @@ RUN tar xf flutter_linux_1.22.6-stable.tar.xz
 RUN rm flutter_linux_1.22.6-stable.tar.xz
 
 # Set env vars for flutter path
+RUN ["echo", "$HOME"]
 ENV PATH="$PATH:$HOME/flutter/bin"
+RUN ["echo", "$PATH"]
 
 # Install missing tools
 RUN apt-get install -yq git && \
@@ -34,13 +36,10 @@ RUN apt-get install -yq git && \
     apt-get install -yq unzip
 
 # Create new flutter project
-RUN ["ls", "-l"]
 WORKDIR /root/projects
-RUN ["ls", "-l"]
 RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
 VOLUME /projects
 WORKDIR /root/projects/Social_Analytix
-RUN ["ls", "-l"]
 
 # Adding web support to the app
 RUN flutter channel beta
@@ -48,7 +47,6 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 
 # Adding web support to the root dir
-RUN ["ls", "-l"]
 RUN flutter create .
 
 # Building web project
