@@ -37,7 +37,7 @@ RUN cd projects
 ### /*RUN flutter create ${PROJECT_NAME}*/ ###
 RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
 VOLUME /projects
-RUN cd /projects/Social_Analytix
+RUN cd /projects && cd Social_Analytix
 
 # Adding web support to the app
 RUN flutter channel beta
