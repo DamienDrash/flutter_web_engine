@@ -84,6 +84,7 @@ RUN rm /etc/nginx/sites-enabled/default
 RUN ln -s /etc/nginx/sites-available/social_analytix /etc/nginx/sites-enabled
 
 # Restart Nginx
-RUN systemctl restart nginx
+RUN service nginx start
+# RUN systemctl restart nginx
 
 EXPOSE 80
