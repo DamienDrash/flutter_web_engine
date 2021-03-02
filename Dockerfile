@@ -27,7 +27,7 @@ RUN rm flutter_linux_1.22.6-stable.tar.xz
 
 # Set env vars for flutter path
 RUN echo $HOME
-ENV PATH="$PATH:$HOME/flutter/bin"
+ENV PATH="$PATH:/root/flutter/bin"
 RUN echo $PATH
 
 # Install missing tools
