@@ -16,6 +16,7 @@ RUN apt-get -yq update
 
 RUN apt-get install -y --no-install-recommends tzdata
 RUN ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
+RUN apt-get install -y ufw 
 
 WORKDIR /root
 RUN mkdir /projects
