@@ -12,10 +12,11 @@ and also enclosed a VSC IDE for coding."
 
 USER root
 
+RUN apt-get -yq update
+
 RUN apt-get install -y --no-install-recommends tzdata
 RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
-RUN apt-get -yq update
 WORKDIR /root
 RUN mkdir /projects
 ##############################################################################
