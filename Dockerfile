@@ -1,4 +1,5 @@
-ARG DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
+ARG DEBIAN_FRONTEND=noninteractive 
+RUN apt-get install -y --no-install-recommends tzdata
 RUN ln -s /usr/share/zoneinfo/Europe/Berlin /etc/localtime
 
 # Source: https://suragch.medium.com/programming-on-your-phone-a2547f0e293
