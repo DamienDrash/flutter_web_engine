@@ -13,6 +13,7 @@ and also enclosed a VSC IDE for coding."
 USER root
 
 RUN apt-get -yq update
+WORKDIR /root
 RUN mkdir /projects
 ##############################################################################
 ############################ FLUTTER INSTALLATION ############################
@@ -34,11 +35,11 @@ RUN apt-get install -yq git && \
 
 # Create new flutter project
 RUN ["ls", "-l"]
-RUN cd /projects
+WORKDIR /root/projects
 RUN ["ls", "-l"]
 RUN git clone https://DamienDrash:"d4M|3n23"@github.com/DamienDrash/Social_Analytix.git
 VOLUME /projects
-RUN cd /Social_Analytix
+WORKDIR /root/projects/Social_Analytix
 RUN ["ls", "-l"]
 
 # Adding web support to the app
