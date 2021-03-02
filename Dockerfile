@@ -45,6 +45,7 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 
 # Adding web support to the root dir
+RUN echo pwd
 RUN flutter create .
 
 # Building web project
